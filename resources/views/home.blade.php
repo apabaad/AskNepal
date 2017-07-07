@@ -27,46 +27,38 @@ a
 			<ul class="list-inline">
 				<li><i class="glyphicon glyphicon-time"></i> {{$post->created_at->diffForHumans()}}</li>
 				<li>|</li>
-				<li><i class="glyphicon glyphicon-user"></i> <a href="{{url('user/profile/' . $post->user_id)}}"> {{$post->user->name}}</a></li>
+				<li> <a href="{{url('user/profile/' . $post->user_id)}}"> <i class="glyphicon glyphicon-user"></i> {{$post->user->name}}</a></li>
 				<li>|</li>
+				@if($post->replies->count()>1)
+				<li><a href="{{url("asknepal/discussion/$post->slug")}}"> {{$post->replies->count()}} comments</a></li>
+				@elseif($post->replies->count()==1)
+				<li><a href="{{url("asknepal/discussion/$post->slug")}}">1 comment</a></li>
+				@elseif($post->replies->count()<1)
+				<li><a href="{{url("asknepal/discussion/$post->slug")}}">Be the first to reply.</a></li)>
+				@endif	
+	
+	
 				@if(Auth::user()->id == $post->user_id)
-				<li><a href="{{url("post/delete/$post->id")}}"><i class="glyphicon glyphicon-trash"></i></a></li>
 				<li>|</li>
-				<li><a href="{{url("post/edit/$post->id")}}">Edit</a></li>
+				<li><a href="{{url("post/edit/$post->id")}}"><i class="glyphicon glyphicon-pencil"></i></a></li>
 				<li>|</li>
+				<li><a href="{{url("post/delete/$post->id")}}"><i onclick="return confirm('Are you sure you want to delete this item?');" class="glyphicon glyphicon-trash"></i></a></li>
 				@endif
-				<li><a href="{{url("asknepal/discussion/$post->slug")}}">
-					
-					
-					
-	@if($post->replies->count()>1)
-			<li><a href="{{url("asknepal/discussion/$post->slug")}}"> {{$post->replies->count()}} comments</a></li>
-</a>
-	@elseif($post->replies->count()==1)
-			<li><a href="{{url("asknepal/discussion/$post->slug")}}">1 comment</a></li>
-
-	@elseif($post->replies->count()<1)
-			<li><a href="{{url("asknepal/discussion/$post->slug")}}">Be the first to reply.</a></li)>
-
-	@endif	
-				
-			
-				</li>
 			</ul>	
-
-		</div>
+		</div> 
 	</div>
 
 @endforeach
 
 <!-- {{$posts->appends(Request::all())->render()}} -->
-{{$posts->links()}}
+
 
 </li>
 </ul>
+{{$posts->links()}}
 </div>
 </div>
 </div>
-<!-- </div> -->
+
 
 @endsection

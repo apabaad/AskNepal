@@ -22,11 +22,12 @@
 
  
  
-<footer class="footer">
-      <div class="container">
-        <p class="text-muted">Place sticky footer content here.</p>
-      </div>
-    </footer>
+<!-- <footer class="footer">
+     <p align="center">  © Copyright AskNepal 2017.</p>
+</footer>
+ -->
+
+
 <script type="text/javascript">
 		@if(notify()->ready())
 			swal({
@@ -39,8 +40,54 @@
 			//@endif	
 			html: true
 			});
+		
+// 			swal({
+//   title: "Are you sure?",
+//   text: "You will not be able to recover this imaginary file!",
+//   type: "warning",
+//   showCancelButton: true,
+//   confirmButtonColor: "#DD6B55",
+//   confirmButtonText: "Yes, delete it!",
+//   closeOnConfirm: false
+// },
+// function(){
+//   swal("Deleted!", "Your imaginary file has been deleted.", "success");
+// });
+
 		@endif
+
 </script>
+
+<style type="text/css">
+	/*.footer{
+		width:100%; 
+		float:left; 
+		background:#F8F8F8; 
+		height:25px;
+	}*/
+	.footer {
+		  position: relative;  /*absolute, fixed*/
+		  right: 0;
+		  bottom: 0;
+		  left: 0;
+		  width: 100%;
+		  background-color: #f5f5f5;
+		  text-align: center;
+		  height: 30px;
+		  /*margin-top: -180px;*/
+		  /*clear: both;*/
+	}
+
+	/*.footer {
+  position: relative;
+  margin-top: -180px;  negative value of footer height 
+  height: 180px;
+  clear: both;
+} 	*/
+.swal-wide{
+    width:200px !important;
+}
+</style>
 
 </body>
 </html>

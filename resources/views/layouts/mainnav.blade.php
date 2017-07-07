@@ -106,6 +106,11 @@
 
 
                                 <ul class="dropdown-menu" role="menu">
+                                 <li>
+                                        <a href="{{url('user/profile/'.Auth::user()->id)}}">
+                                            <i class="glyphicon glyphicon-user"></i> My Profile
+                                        </a>
+                                    </li>
                                     
 
                                     <li>
@@ -119,14 +124,10 @@
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
-                                    <!-- <li>
-                                        <a href="{{url('DeleteUser/'.Auth()->user()->id)}}">Delete account</a>
-                                    --> </li>
                                     <li>
-                                        <a href="{{url('user/profile/'.Auth::user()->id)}}">
-                                            <i class="glyphicon glyphicon-user"></i> My Profile
-                                        </a>
+                                       <!-- <a href="{{url('DeleteUser/'.Auth()->user()->id)}}"> <i class="  glyphicon glyphicon-remove"></i>Delete account</a> -->
                                     </li>
+                                   
                                 </ul>
                             </li>
                         @endif

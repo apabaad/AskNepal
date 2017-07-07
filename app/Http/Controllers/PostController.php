@@ -24,7 +24,7 @@ class PostController extends Controller
         // $posts->slug=str_slug("$data->title");
         $posts->question=$data->question;
         if ($posts->save()) {
-         notify()->flash ('<h3>Post saved successfully</h3>','success',['timer'=>1000]);
+         notify()->flash ('<h3>Post saved successfully</h3>','success',['timer'=>2000]);
         }
         return redirect('home');
     }
@@ -52,6 +52,7 @@ class PostController extends Controller
 
     public function delete($id){
         $post=Post::find($id);
+        
          if($post->delete()){
          notify()->flash ('<h3>Post deleted successfully</h3>','success',['timer'=>1000]);
             return redirect()->back();

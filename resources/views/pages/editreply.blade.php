@@ -10,16 +10,6 @@ a
    background-color: none;
 }
 </style>
-<script type="text/javascript">
-	$(document).ready(function() {
-  
-    var input = $("#editreply");
-    var len = input.val().length;
-    input[0].focus();
-    input[0].setSelectionRange(len, len);
-
-});
-</script>
 
 <div class="container">
 <div class="media">
@@ -33,14 +23,11 @@ a
 			</ul>
 		</div>
 </div>
-<form method="get" action="updatereply" enctype="multipart/form-data" class="form-horizontal">
+<form method="get" id="form" action="updatereply" enctype="multipart/form-data" class="form-horizontal">
 
 <div class="form-group">
 	 <div class="col-md-6">
-           <textarea id="editreply" placeholder="Type your reply here..." class="form-control" name="reply" rows="3" required autofocus>{{$reply->body}}</textarea>
-    		<div class="col-md-3">
-    		<input type="submit" value="Save" class="form-control btn-default" >
-      </div>  
+           <textarea id="reply" placeholder="Type your reply here..." class="form-control" name="reply" rows="3" required autofocus>{{$reply->body}}</textarea>
  </div>
   
   </div>
@@ -51,3 +38,16 @@ a
  </form>
 
 </div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+    $('#reply').keypress(function(e){
+      if(e.which == 13 && !e.shiftKey){
+           $('#form').submit();
+       }
+    });
+});
+</script>
+
+
+@endsection
