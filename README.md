@@ -1,4 +1,4 @@
-<h2>How to use</h2>
+<h2>How to install the project</h2>
 
 <b>Clone repo</b><br>
 git clone https://github.com/apabaad/AskNepal.git
@@ -14,5 +14,5 @@ php artisan key:generate
 <b>Migrate</b><br>
 php artisan migrate
 
-
-<i>Please add categories from localhost table. 'Add category' view coming soon.</i>
+<h2>After project installation</h2>
+Please add categories from localhost table. 'Add category' view coming soon.
