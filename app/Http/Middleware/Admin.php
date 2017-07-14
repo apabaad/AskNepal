@@ -1,4 +1,3 @@
-//dashboard access
 <?php
 
 namespace App\Http\Middleware;
