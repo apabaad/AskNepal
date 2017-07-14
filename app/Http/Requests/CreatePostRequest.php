@@ -26,7 +26,7 @@ class CreatePostRequest extends FormRequest
         return [
             'title'=>'required|max:45|min:6',
             'question'=>'required|min:15',
-            'topic'=>'required'
+            // 'topic'=>'required'
                 ];
     }
 }

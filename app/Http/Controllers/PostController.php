@@ -19,7 +19,7 @@ class PostController extends Controller
     public function store(CreatePostRequest $data){
     	$posts=new Post;
         $posts['user_id']=Auth::user()->id;
-        $posts->category_id= $data->topic;
+        // $posts->category_id= $data->topic;
         $posts->title=$data->title;
         // $posts->slug=str_slug("$data->title");
         $posts->question=$data->question;
