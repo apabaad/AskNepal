@@ -1,7 +1,8 @@
 <h2>Inside AskNepal</h2>
-Ask, read, edit, delete posts and replies.<br>
-View user profile.<br>
+CRUD posts.<br>
+CRUD replies.<br>
 Notification and search features.<br>
+View user profile.<br>
 
 <h2>How to install the project</h2>
 
