@@ -15,4 +15,4 @@ php artisan key:generate
 php artisan migrate
 
 <h2>After project installation</h2>
-Please add categories from localhost table. 'Add category' view coming soon.
+Please add categories by inserting from localhost. 'Add category' view coming soon.
