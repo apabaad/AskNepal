@@ -41,7 +41,10 @@ Route::get('user/profile/{id}','UserController@UserProfile');
 Route::post('user/profile/UpdateAvatar','UserController@UpdateAvatar');
 Route::get('DeleteUser/{id}','UserController@DeleteUser')->middleware('auth');
 
+ Route::get('admin/category', 'CategoryController@create')->middleware('auth')->middleware('admin');
 
+// Route::group(['middleware' => 'admin'], function () {
+//    Route::get('admin/category', 'CategoryController@create');
+// });
 
-
-
+	

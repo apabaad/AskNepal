@@ -9,12 +9,19 @@ a
    text-decoration: none; 
    background-color: none;
 }
+
+#a
+{
+   color:blue;
+   text-decoration: none; 
+   background-color: none;
+}
 </style>
 
 <div class="container">
 <!-- <div class="col-sm-6"> -->
 
-@foreach($posts as $key => $post)
+@forelse($posts as $key => $post)
 
 	<div class="well well-sm ">
 		<div class="media">
@@ -47,8 +54,9 @@ a
 			</ul>	
 		</div> 
 	</div>
-
-@endforeach
+@empty
+<p>	No any questions. <a href="{{url('ask')}}" id="a">Ask</a> here.</p>
+@endforelse
 
 <!-- {{$posts->appends(Request::all())->render()}} -->
 

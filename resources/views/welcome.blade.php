@@ -13,7 +13,7 @@ a
 
 <div class="container">
 
-	@foreach($posts as $key => $post)
+	@forelse($posts as $key => $post)
 	<div class="well well-sm ">
 		<div class="media">
 			<h4 class="media-heading"><a href="{{url("asknepal/guestforum/$post->slug")}}">{{$post->title}}</a></h4>
@@ -34,6 +34,9 @@ a
 			</ul>		
 		</div>
 	</div>
-@endforeach
+
+	@empty
+	No any questions. Please <a href="{{ route('login') }}">login</a> or <a href="{{ route('register') }}">register</a> to ask.
+@endforelse
 {{$posts->links()}}
 </div>
