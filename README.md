@@ -13,3 +13,6 @@ php artisan key:generate
 
 <b>Migrate</b><br>
 php artisan migrate
+
+
+<i>Please add categories from localhost table. 'Add category' view coming soon.</i>
